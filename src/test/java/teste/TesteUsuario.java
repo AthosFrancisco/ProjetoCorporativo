@@ -20,10 +20,9 @@ public class TesteUsuario {
         
         Usuario usu = new Usuario();
         
-        usu.setId(1);
-        usu.setNome("athos");
-        usu.setEmail("athos@gmail.com");
-        usu.setLogin("Athos");
+        usu.setNome("Miranda");
+        usu.setEmail("miranda@gmail.com");
+        usu.setLogin("Miranda");
         usu.setSenha("1234");
         
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("teste");

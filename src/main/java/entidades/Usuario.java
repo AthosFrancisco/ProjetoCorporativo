@@ -13,11 +13,11 @@ import javax.persistence.*;
  * @author athos.carmo
  */
 @Entity
-@Table(schema = "ROOT", name = "USUARIO")
 public class Usuario implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "")
+    @SequenceGenerator(name = "seq_usu", sequenceName = "usuario_seq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "seq_usu", strategy = GenerationType.SEQUENCE)
     private Integer id;
     
     private String nome;
@@ -64,6 +64,4 @@ public class Usuario implements Serializable{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    
 }
