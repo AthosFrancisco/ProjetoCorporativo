@@ -8,6 +8,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
 
         <!-- entidade mapeada -->
         <class>entidades.Usuario</class>
+        <class>entidades.Usuario2</class>
 
         <properties>
             <!-- dados da conexao -->

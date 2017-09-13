@@ -9,6 +9,7 @@ import entidades.Usuario;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import util.JPAUtil;
 
 /**
  *
@@ -25,9 +26,7 @@ public class TesteUsuario {
         usu.setLogin("Miranda");
         usu.setSenha("1234");
         
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("teste");
-        
-        EntityManager manager = factory.createEntityManager();
+        EntityManager manager = JPAUtil.getConexao();
         
         manager.getTransaction().begin();
         manager.persist(usu);
