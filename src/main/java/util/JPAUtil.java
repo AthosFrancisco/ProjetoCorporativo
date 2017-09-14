@@ -18,12 +18,19 @@ public class JPAUtil {
     private static EntityManagerFactory emf;
     private static EntityManager em;
     
-    static{
+    public static EntityManager getConexao(){
         emf = Persistence.createEntityManagerFactory("teste");
         em = emf.createEntityManager();
+        return em;
     }
     
-    public static EntityManager getConexao(){
-        return em;
+    public static void inserir(Object obj){
+        
+        EntityManager entiMana = getConexao();
+        
+        entiMana.getTransaction().begin();
+        entiMana.persist(obj);
+        entiMana.getTransaction().commit();
+        entiMana.close();
     }
 }

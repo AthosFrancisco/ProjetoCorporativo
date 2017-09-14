@@ -11,6 +11,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
         <class>entidades.Usuario2</class>
         <class>entidades.Usuario3</class>
         <class>entidades.Usuario4</class>
+        <class>entidades.Usuario5</class>
 
         <properties>
             <!-- dados da conexao -->

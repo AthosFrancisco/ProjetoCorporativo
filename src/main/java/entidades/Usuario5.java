@@ -14,12 +14,15 @@ import javax.persistence.*;
  * @author athos.carmo
  */
 @Entity
+@IdClass(Usuario5Id.class)
+@Table(name = "TB_USUARIO5")
 @Access(AccessType.FIELD)
 public class Usuario5 implements Serializable{
     
     public Usuario5(){}
     
-    public Usuario5(String nome, String email, String login, String senha, Calendar data){
+    public Usuario5(String cpf, String nome, String email, String login, String senha, Calendar data){
+        this.cpf = cpf;
         this.nome = nome;
         this.email = email;
         this.login = login;
@@ -45,12 +48,15 @@ public class Usuario5 implements Serializable{
     @Transient // atributo não persiste
     private Integer idade;
     
-    @Column(name = "TXT_CPF")
-    @Access(AccessType.PROPERTY)
+
     public String getCpf(){
         return cpf;
     }
 
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    
     public String getNome() {
         return nome;
     }
